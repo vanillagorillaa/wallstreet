@@ -1,5 +1,5 @@
 
-DATE_FORMAT = '%d-%m-%Y'
+DATE_FORMAT = '%m-%d-%Y'
 DATETIME_FORMAT = '%e %b %Y %H:%M:%S'
 
 TREASURY_URL = "https://home.treasury.gov/sites/default/files/interest-rates/yield.xml"

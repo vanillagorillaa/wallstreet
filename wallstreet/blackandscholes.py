@@ -6,7 +6,7 @@ from scipy import sqrt, log, exp
 from scipy.stats import norm
 from scipy.optimize import fsolve
 
-from wallstreet.constants import *
+from constants import *
 
 import xml.etree.ElementTree as ET
 

@@ -6,8 +6,8 @@ from time import mktime, sleep
 from io import StringIO
 from urllib.parse import urlencode
 
-from wallstreet.constants import DATE_FORMAT, DATETIME_FORMAT
-from wallstreet.blackandscholes import riskfree, BlackandScholes
+from constants import DATE_FORMAT, DATETIME_FORMAT
+from blackandscholes import riskfree, BlackandScholes
 
 from functools import wraps
 from collections import defaultdict
@@ -33,7 +33,7 @@ def get_headers(agent='Mozilla/5.0'):
             'User-Agent': agent,
         }
     )
-    
+
     return headers
 
 class ClassPropertyDescriptor:
@@ -233,7 +233,7 @@ class Option:
 
             if all((d, m, y)) and not self._has_run and not strict:
                 closest_date = min(self._exp, key=lambda x: abs(x - self._expiration))
-                print('No options listed for given date, using %s instead' % closest_date.strftime(DATE_FORMAT))
+                #print('No options listed for given date, using %s instead' % closest_date.strftime(DATE_FORMAT))
                 self._has_run = True
                 self.__init__(quote, closest_date.day, closest_date.month, closest_date.year, source=source)
             else:
